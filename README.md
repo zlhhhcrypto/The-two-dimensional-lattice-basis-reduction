@@ -16,7 +16,7 @@ All programs can be executed independently. If the lattice basis data are too la
 Compilation：
 
 ```
-gcc CrossEUC.c -o alg3 -lgmp
+gcc CrossEuc.c -o alg3 -lgmp
 ```
 
 Run：
