@@ -427,7 +427,6 @@ void bitaddqlen(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by, mpz_t q, long * addqlen)
 	mpz_clear(add1);	mpz_clear(add2);
 }
 
-//
 void hgcd(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by, mpz_t a1, mpz_t a2, mpz_t b1, mpz_t b2){
 	int sgnax, sgnay, sgnbx, sgnby;
 	sgnax = mpz_sgn(ax);
@@ -526,8 +525,6 @@ void hgcd(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by, mpz_t a1, mpz_t a2, mpz_t b1, 
 		mpz_neg(b2, b2);
 	}
 	
-	
-	
 	while((maxlen > (((N*3) / 4) + 1)) && (sublen > S) && (addlen > S)){
 		if(flag == false){
 			if((mpz_cmpabs(ax, ay) >= 0 && mpz_cmpabs(bx, by) <= 0) || (mpz_cmpabs(ax, ay) <= 0 && mpz_cmpabs(bx, by) >= 0)){
@@ -604,8 +601,6 @@ void hgcd(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by, mpz_t a1, mpz_t a2, mpz_t b1, 
 				mpz_swap(ax, bx);
 				mpz_swap(ay, by);
 			}
-
-				
 
 			mpz_swap(a1, b1);
 			mpz_swap(a2, b2);
@@ -769,3 +764,4 @@ void hgcd(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by, mpz_t a1, mpz_t a2, mpz_t b1, 
 	
 	return;
 }
+
