@@ -43,11 +43,6 @@ int main(int argc, char *argv[]){
 	FILE *fp = fopen("Input.txt", "r");
 	gmp_fscanf(fp, "%Zd %Zd %Zd %Zd", a[0], a[1], b[0], b[1]);
 	fclose(fp);
-	
-	if(mpz_cmp(a[0], b[0]) < 0){
-		mpz_swap(a[0], b[0]);
-	}
-	mpz_set_si(a[1], 0);
     	
 	int euctime = 0;
 	start = clock();
@@ -147,8 +142,7 @@ void Half_Gaussian(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by){
 		mpz_set_si(a1, 1);	mpz_set_si(a2, 0);	mpz_set_si(b1, 0);	mpz_set_si(b2, 1);
 
     	half_gaussian(ax, ay, bx, by, a1, a2, b1, b2);	
-    		
-    		
+    	
     	int det = detdim2mat(a1, a2, b1, b2);
     	mpz_mul(tmp1, tax, b2);	mpz_mul(tmp2, tbx, b1);	mpz_sub(ax, tmp1, tmp2);
     	mpz_mul(tmp1, tay, b2);	mpz_mul(tmp2, tby, b1);	mpz_sub(ay, tmp1, tmp2);
@@ -767,7 +761,6 @@ void half_gaussian(mpz_t ax, mpz_t ay, mpz_t bx, mpz_t by, mpz_t a1, mpz_t a2, m
 			return;
 		}
 	}
-	
 	
 	mpz_clear(ta1);	mpz_clear(ta2);	mpz_clear(tb1);	mpz_clear(tb2);
 	mpz_clear(ax0);	mpz_clear(ay0);	mpz_clear(bx0);	mpz_clear(by0);
