@@ -214,10 +214,6 @@ int main(){
 	}
 	fclose(fp);	
 	
-	if(mpz_cmp(a[0], b[0]) < 0){
-		mpz_swap(a[0], b[0]);
-	}
-	mpz_set_si(a[1], 0);
 	start = clock();
 	findanswer();
 	finish = clock();
